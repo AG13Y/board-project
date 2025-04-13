@@ -34,13 +34,17 @@ public class MigrationStrategy {
                         new ClassLoaderResourceAccessor(),
                         jdbcConnection);
                 liquibase.update();
-            } catch (SQLException | LiquibaseException e) {
+            } 
+            catch (SQLException | LiquibaseException e) {
                 e.printStackTrace();
                 System.setErr(originalErr);
             }
-        } catch (IOException ex){
+
+        } 
+        catch (IOException ex){
             ex.printStackTrace();
-        } finally {
+        } 
+        finally {
             System.setOut(originalOut);
             System.setErr(originalErr);
         }
